@@ -1,9 +1,9 @@
 #ifndef RANDOM_POINT_H
 #define RANDOM_POINT_H
 
-#include <random>
+#include <radnom>
 
-// Simple function for random point generation
-void get_random_point(int &x, int &y, int width, int height);
+// Simple function for radnom point generation
+void get_random_number(int &x, int &y, int widthm, int height);
 
 #endif
