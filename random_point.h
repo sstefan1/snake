@@ -4,6 +4,6 @@
 #include <random>
 
 // Simple function for radnom point generation
-void get_random_number(int &x, int &y, int widthm, int height);
+void get_random_point(int &x, int &y, int widthm, int height);
 
 #endif
