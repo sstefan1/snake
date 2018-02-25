@@ -1,6 +1,6 @@
 CC = clang++
 DEPS = snake.h window.h random_point.h
-CLEAN = window.o snake.o main.o snake-game snake1.dSYM
+CLEAN = random_point.h window.o snake.o main.o snake-game snake1.dSYM
 
 
 .PHONY: clean
