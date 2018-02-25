@@ -1,8 +1,7 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
-#include <cstdlib>
-#include <ctime>
+#include "random_point.h"
 #include <vector>
 
 typedef enum direction { UP, DOWN, RIGHT, LEFT, STATIC } direction;
@@ -17,7 +16,7 @@ private:
   std::vector<snake_part> body;
 
 public:
-  Snake();
+  Snake(int width, int height);
   void update_snake(int width, int height);
   void update_direction(char ch);
   int get_x(int i) const;

@@ -1,16 +1,15 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include <ncurses.h>
-#include <thread>
-#include <ctime>
-#include "snake.h"
-
 #define WIDTH 50
 #define HEIGHT 20
 
+#include "snake.h"
+#include <ncurses.h>
+#include <thread>
+
 static WINDOW *win;
-static Snake s;
+static Snake s(WIDTH, HEIGHT);
 
 // Creates a window of given size
 void create_window(int x, int y);

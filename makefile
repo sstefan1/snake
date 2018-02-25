@@ -1,15 +1,15 @@
 CC = clang++
-DEPS = snake.h windows.h random_point.h
+DEPS = snake.h window.h random_point.h
 CLEAN = window.o snake.o main.o snake-game snake1.dSYM
 
 
 .PHONY: clean
 
-%.o: %.c $(DEPS)
+%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $<
 
-snake: snake.o window.o main.o
-	$(CC) -o snake-game snake.o window.o main.o -lncurses
+snake: snake.o window.o random_point.o main.o
+	$(CC) -o snake-game snake.o window.o random_point.o main.o -std=c++11 -lncurses -stdlib=libc++
 
 clean:
 	rm -rf $(CLEAN)

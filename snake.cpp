@@ -1,13 +1,8 @@
 #include "snake.h"
 
-Snake::Snake() {
+Snake::Snake(int width, int height) {
   int x_head, y_head;
-  srand((unsigned)time(0));
-
-  x_head = (rand() % 49) + 1;
-  y_head = (rand() % 19) + 1;
-  // x_head = (rand() % 49) + 1;
-
+  get_random_point(x_head, y_head, width, height);
   snake_part head = {.x = x_head, .y = y_head};
 
   body.push_back(head);

@@ -1,9 +1,5 @@
 #include "window.h"
 
-// Global variables
-// WINDOW *win;
-// Snake s;
-
 void create_window(int width, int height) {
   initscr();
   timeout(0);
@@ -48,10 +44,7 @@ void game() {
 void generate_fruit() {
   int x_fruit, y_fruit;
 
-  srand((unsigned)time(0));
-
-  x_fruit = rand() % 49 + 1;
-  y_fruit = rand() % 19 + 1;
+  get_random_point(x_fruit, y_fruit, WIDTH, HEIGHT);
 
   mvwaddch(win, y_fruit, x_fruit, '%');
 }
