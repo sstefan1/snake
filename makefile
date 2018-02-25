@@ -1,5 +1,5 @@
 CC = clang++
-DEPS = snake.h windows.hpp
+DEPS = snake.h windows.h random_point.h
 CLEAN = window.o snake.o main.o snake-game snake1.dSYM
 
 
