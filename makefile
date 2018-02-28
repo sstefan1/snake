@@ -9,7 +9,7 @@ CLEAN = random_point.o window.o snake.o main.o snake-game snake1.dSYM
 	$(CC) -c -o $@ $<
 
 snake: snake.o window.o random_point.o main.o
-	$(CC) -o snake-game snake.o window.o random_point.o main.o -std=c++11 -lncurses -stdlib=libc++
+	$(CC) -o snake-game snake.o window.o random_point.o main.o -std=c++11 -lncurses
 
 clean:
 	rm -rf $(CLEAN)

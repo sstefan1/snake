@@ -17,7 +17,7 @@ private:
 
 public:
   Snake(int width, int height);
-  void update_snake(int width, int height);
+  bool update_snake(int width, int height);
   void update_direction(char ch);
   int get_x(int i) const;
   int get_y(int i) const;

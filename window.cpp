@@ -9,13 +9,14 @@ void create_window(int width, int height) {
   mvprintw(0, 0, "x = %d; y = %d;", s.get_x(0), s.get_y(0));
   refresh();
 
-  box(win, 0, 0);
+  //  box(win, 0, 0);
+  wborder(win, 0, 0, 0, 0, '+', '+', '+', '+');
   wrefresh(win);
 }
 
 void printw_snake() {
   for (int i = 0; i < s.get_body().size(); ++i) {
-    mvwaddch(win, s.get_y(i), s.get_x(i), '@');
+    mvwaddch(win, s.get_y(i), s.get_x(i), ACS_DIAMOND);
   }
 }
 
@@ -32,7 +33,8 @@ void game() {
   while ((ch = getch()) != 'q') {
     s.update_direction(ch);
     clearw_snake();
-    s.update_snake(WIDTH, HEIGHT);
+    if (!s.update_snake(WIDTH, HEIGHT))
+      break;
     printw_snake();
     wrefresh(win);
     std::this_thread::sleep_for(std::chrono::milliseconds(150));
@@ -44,7 +46,9 @@ void game() {
 void generate_fruit() {
   int x_fruit, y_fruit;
 
-  get_random_point(x_fruit, y_fruit, WIDTH, HEIGHT);
+  get_random_point(x_fruit, y_fruit, WIDTH - 1, HEIGHT - 1);
 
-  mvwaddch(win, y_fruit, x_fruit, '%');
+  mvwaddch(win, y_fruit, x_fruit, '#');
+
+  mvprintw(1, 0, "x_fruit = %d, y_fruit = %d", x_fruit, y_fruit);
 }

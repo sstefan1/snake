@@ -1,7 +1,7 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#define WIDTH 50
+#define WIDTH 51
 #define HEIGHT 20
 
 #include "snake.h"
@@ -9,7 +9,7 @@
 #include <thread>
 
 static WINDOW *win;
-static Snake s(WIDTH, HEIGHT);
+static Snake s(WIDTH - 1, HEIGHT - 1);
 
 // Creates a window of given size
 void create_window(int x, int y);
