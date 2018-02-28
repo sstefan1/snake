@@ -29,45 +29,41 @@ void Snake::update_direction(char ch) {
 }
 
 bool Snake::update_snake(int width, int height) {
+  int x = body[0].x;
+  int y = body[0].y;
+
+  if (x == 0 || x == 50 || y == 0 || y == 19)
+    return false;
+
   switch (dir) {
   case UP:
     if (body[0].y > 0) {
       body[0].x += 0;
       body[0].y += -1;
-    } else {
-      return false;
     }
     break;
   case DOWN:
     if (body[0].y < height - 1) {
       body[0].x += 0;
       body[0].y += 1;
-    } else {
-      return false;
     }
     break;
   case LEFT:
     if (body[0].x > 0) {
       body[0].x += -2;
       body[0].y += 0;
-    } else {
-      return false;
     }
     break;
   case RIGHT:
     if (body[0].x < width - 2) {
       body[0].x += 2;
       body[0].y += 0;
-    } else {
-      return false;
     }
     break;
   default:
     break;
   }
   return true;
-  //  for (int i = 1; i < body.size() - 1;)
-  //    body[i] = body[++i];
 }
 
 int Snake::get_x(int i) const { return body[i].x; }
