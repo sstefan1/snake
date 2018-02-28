@@ -4,7 +4,7 @@
 #include "random_point.h"
 #include <vector>
 
-typedef enum direction { UP, DOWN, RIGHT, LEFT, STATIC } direction;
+enum direction { LEFT = 0, DOWN, RIGHT, UP, STATIC };
 
 typedef struct snake_part {
   int x, y;
@@ -12,7 +12,7 @@ typedef struct snake_part {
 
 class Snake {
 private:
-  direction dir; // Direction
+  int dir; // Direction
   std::vector<snake_part> body;
 
 public:
@@ -24,6 +24,7 @@ public:
   int get_dir() const;
   std::vector<snake_part> get_body() const;
   int get_snake_size() const;
+  void add_snake_part();
 };
 
 #endif

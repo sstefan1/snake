@@ -2,7 +2,7 @@
 
 int main(){
   create_window(WIDTH, HEIGHT);
-
+  printw_snake();
   game();
 
   clear();

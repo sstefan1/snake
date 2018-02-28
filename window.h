@@ -11,6 +11,9 @@
 static WINDOW *win;
 static Snake s(WIDTH - 1, HEIGHT - 1);
 
+// Fruit coordinates
+static int x_fruit, y_fruit;
+
 // Creates a window of given size
 void create_window(int x, int y);
 // Prints snake to the window

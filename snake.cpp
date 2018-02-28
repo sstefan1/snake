@@ -8,32 +8,43 @@ Snake::Snake(int width, int height) {
   dir = STATIC;
 }
 
+// Movement logic
 void Snake::update_direction(char ch) {
+  int new_dir = dir;
 
   switch (ch) {
   case 'w':
-    dir = UP;
+    new_dir = UP;
     break;
   case 's':
-    dir = DOWN;
+    new_dir = DOWN;
     break;
   case 'a':
-    dir = LEFT;
+    new_dir = LEFT;
     break;
   case 'd':
-    dir = RIGHT;
+    new_dir = RIGHT;
     break;
   default:
     break;
   }
+
+  if (body.size() == 1)
+    dir = new_dir;
+  else if (abs(dir - new_dir) % 2 == 1)
+    dir = new_dir;
 }
 
 bool Snake::update_snake(int width, int height) {
   int x = body[0].x;
   int y = body[0].y;
 
-  if (x == 0 || x == 50 || y == 0 || y == 19)
+  // Check for wall collision
+  if (x == 0 || x == width - 1 || y == 0 || y == height - 1)
     return false;
+  // Move body parts
+  for (int i = body.size(); i > 0; --i)
+    body[i] = body[i - 1];
 
   switch (dir) {
   case UP:
@@ -75,3 +86,8 @@ int Snake::get_dir() const { return dir; }
 int Snake::get_snake_size() const { return body.size(); }
 
 std::vector<snake_part> Snake::get_body() const { return body; }
+
+void Snake::add_snake_part() {
+  snake_part new_part = {.x = 0, .y = 0};
+  body.push_back(new_part);
+}
