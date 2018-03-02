@@ -2,18 +2,16 @@
 #define SNAKE_H
 
 #include "random_point.h"
+#include "snake_part.h"
 #include <vector>
 
 enum direction { LEFT = 0, DOWN, RIGHT, UP, STATIC };
 
-typedef struct snake_part {
-  int x, y;
-} snake_part;
-
 class Snake {
 private:
-  int dir; // Direction
-  std::vector<snake_part> body;
+  int dir;  // Direction
+  Snake_part snake_part; // Position on board
+  std::vector<Snake_part> body;
 
 public:
   Snake(int width, int height);
@@ -22,8 +20,8 @@ public:
   int get_x(int i) const;
   int get_y(int i) const;
   int get_dir() const;
-  std::vector<snake_part> get_body() const;
-  int get_snake_size() const;
+  //std::vector<Snake_part> get_body() const;
+  unsigned long get_snake_size() const;
   void add_snake_part();
 };
 

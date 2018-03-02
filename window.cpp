@@ -15,12 +15,14 @@ void create_window(int width, int height) {
 }
 
 void printw_snake() {
-  for (int i = 0; i < s.get_body().size(); ++i) {
+  // Not using Snake::get_body() any more due to a runtime error found when
+  // running in OS X
+  for (int i = 0; i < s.get_snake_size(); ++i) {
     mvwaddch(win, s.get_y(i), s.get_x(i), ACS_DIAMOND);
   }
 }
 
-// This will clear the head and the tail from screen since they are the only
+// This will clear the head and the tail from the screen since they are the only
 // parts that change position
 void clearw_snake() {
   for (int i = 0; i < s.get_snake_size(); ++i)
@@ -39,13 +41,10 @@ void game() {
     int y_head = s.get_y(0);
 
     if (x_head == x_fruit && y_head == y_fruit) {
-      mvprintw(4, 0, "FRUIT EATEN");
       s.add_snake_part();
       get_random_point(x_fruit, y_fruit, WIDTH - 1, HEIGHT - 1);
       mvwaddch(win, y_fruit, x_fruit, '#');
-      mvprintw(4, 0, "FRUIT EATEN");
-    } else
-      mvprintw(5, 0, "NOT EATEN");
+    }
 
     if (!s.update_snake(WIDTH, HEIGHT))
       break;
@@ -65,6 +64,4 @@ void generate_fruit() {
   get_random_point(x_fruit, y_fruit, WIDTH - 1, HEIGHT - 1);
 
   mvwaddch(win, y_fruit, x_fruit, '#');
-
-  mvprintw(1, 0, "x_fruit = %d, y_fruit = %d", x_fruit, y_fruit);
 }

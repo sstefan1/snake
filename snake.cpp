@@ -3,7 +3,7 @@
 Snake::Snake(int width, int height) {
   int x_head, y_head;
   get_random_point(x_head, y_head, width, height);
-  snake_part head = {.x = x_head, .y = y_head};
+  Snake_part head(x_head, y_head);
   body.push_back(head);
   dir = STATIC;
 }
@@ -83,11 +83,12 @@ int Snake::get_y(int i) const { return body[i].y; }
 
 int Snake::get_dir() const { return dir; }
 
-int Snake::get_snake_size() const { return body.size(); }
+unsigned long Snake::get_snake_size() const { return body.size(); }
 
-std::vector<snake_part> Snake::get_body() const { return body; }
+// Causing a runtime runtime error in OS X
+// std::vector<Snake_part> Snake::get_body() const { return body; }
 
 void Snake::add_snake_part() {
-  snake_part new_part = {.x = 0, .y = 0};
+  Snake_part new_part;
   body.push_back(new_part);
 }
