@@ -20,7 +20,7 @@ public:
   int get_x(int i) const;
   int get_y(int i) const;
   int get_dir() const;
-  //std::vector<Snake_part> get_body() const;
+  // std::vector<Snake_part> get_body() const;
   unsigned long get_snake_size() const;
   void add_snake_part();
 };
