@@ -1,16 +1,16 @@
 CC = clang++
-DEPS = snake_part.h snake.h window.h random_point.h
+DEPS = src/snake_part.h src/snake.h src/window.h src/random_point.h
 CLEAN = snake-game snake1.dSYM
-OBJ = snake_part.o window.o snake.o random_point.o main.o
+OBJ = src/snake_part.o src/window.o src/snake.o src/random_point.o src/main.o
 LIB = -lncurses -lpthread
 
 .PHONY: clean
 
-%.o: %.cpp $(DEPS)
+%.o: src/%.cpp $(DEPS)
 	$(CC) -c -o $@ $<
 
 snake: $(OBJ)
 	$(CC) $(OBJ) -std=c++11 $(LIB) -o snake-game
 
 clean:
-	rm -rf *.o $(CLEAN)
+	rm -rf src/*.o $(CLEAN)
