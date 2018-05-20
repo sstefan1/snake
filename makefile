@@ -4,6 +4,7 @@ CLEAN = snake-game snake1.dSYM
 OBJ = src/snake_part.o src/window.o src/snake.o src/random_point.o src/main.o
 LIB = -lncurses -lpthread
 FLAGS = -Wall -Wpedantic -Weverything
+OPTIMIZATION = -O3
 
 .PHONY: clean
 
@@ -11,7 +12,7 @@ FLAGS = -Wall -Wpedantic -Weverything
 	$(CC) -c -o $@ $< $(FLAGS)
 
 snake: $(OBJ)
-	$(CC) $(OBJ) -std=c++11 $(LIB) -o snake-game $(FLAGS)
+	$(CC) $(OBJ) -std=c++11 $(LIB) -o snake-game $(FLAGS) $(OPTIMIZATION)
 
 clean:
 	rm -rf src/*.o $(CLEAN)
