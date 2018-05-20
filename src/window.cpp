@@ -1,4 +1,4 @@
-#include "window.h"
+#include "../include/window.h"
 
 void create_window(int width, int height) {
   initscr();

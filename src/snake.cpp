@@ -1,4 +1,4 @@
-#include "snake.h"
+#include "../include/snake.h"
 
 Snake::Snake(int width, int height) {
   int x_head, y_head;

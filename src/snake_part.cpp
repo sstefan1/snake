@@ -1,4 +1,4 @@
-#include "snake_part.h"
+#include "../include/snake_part.h"
 
 Snake_part::Snake_part(){ x = 0; y = 0;}
 

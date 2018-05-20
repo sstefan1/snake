@@ -1,0 +1,18 @@
+# ninja log v5
+1	64	1526848680	CMakeFiles/snake.dir/src/snake_part.cpp.o	1cf02406d731b95b
+0	770	1526848680	CMakeFiles/snake.dir/src/main.cpp.o	2c06acad3d690435
+2	773	1526848680	CMakeFiles/snake.dir/src/window.cpp.o	4ebdb49a5f1ac461
+3	773	1526848680	CMakeFiles/snake.dir/src/random_point.cpp.o	b302352202dc2d2b
+1	780	1526848680	CMakeFiles/snake.dir/src/snake.cpp.o	552aca34544b39e3
+2	40	1526849272	CMakeFiles/snake.dir/src/snake_part.cpp.o	1cf02406d731b95b
+3	579	1526849272	CMakeFiles/snake.dir/src/random_point.cpp.o	b302352202dc2d2b
+1	582	1526849272	CMakeFiles/snake.dir/src/main.cpp.o	2c06acad3d690435
+2	598	1526849272	CMakeFiles/snake.dir/src/snake.cpp.o	552aca34544b39e3
+2	600	1526849272	CMakeFiles/snake.dir/src/window.cpp.o	4ebdb49a5f1ac461
+600	624	1526849272	snake	674a7b90296c8c63
+3	45	1526850064	CMakeFiles/snake.dir/src/snake_part.cpp.o	1cf02406d731b95b
+5	595	1526850065	CMakeFiles/snake.dir/src/random_point.cpp.o	b302352202dc2d2b
+2	599	1526850065	CMakeFiles/snake.dir/src/main.cpp.o	2c06acad3d690435
+2	608	1526850065	CMakeFiles/snake.dir/src/snake.cpp.o	552aca34544b39e3
+3	618	1526850065	CMakeFiles/snake.dir/src/window.cpp.o	4ebdb49a5f1ac461
+618	641	1526850065	snake	674a7b90296c8c63
