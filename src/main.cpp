@@ -1,4 +1,4 @@
-#include "../include/window.h"
+#include "include/window.h"
 
 int main(){
   create_window(WIDTH, HEIGHT);

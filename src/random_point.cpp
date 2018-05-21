@@ -1,4 +1,4 @@
-#include "../include/random_point.h"
+#include "include/random_point.h"
 
 // Simple function for random point generation
 void get_random_point(int &x, int &y, int width, int height) {
