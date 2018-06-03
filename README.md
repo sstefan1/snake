@@ -1,5 +1,7 @@
 # Simple snake-game 
 
+- test
+
 This is a simple snake-like game written in c++ using ncurses library
 
 * __BUILDING__: navigate to the build directory and run cmake.
